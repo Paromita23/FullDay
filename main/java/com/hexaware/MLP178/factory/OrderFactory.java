@@ -267,14 +267,14 @@ public class OrderFactory {
       {
         if (count == 1 && ordermonth == currentmonth) {
           System.out.println("Happy Women's Day");
-          System.out.println("Your Order Price of menu 1 is  " + price1);
-          System.out.println("Your Order Price of menu 2 is  " + price2);
-          System.out.println("Your Order Price of menu 3 is  " + price3);
-          order.setOrderStatus(OrderStatus.PENDING);
-          order.setOrderTotalamount(totalAmount);
-          dao().placeOrder(order);
-          dao().updateBalance(diff, order.getWalletType(), order.getCustomerId());
         }
+        System.out.println("Your Order Price of menu 1 is  " + price1);
+        System.out.println("Your Order Price of menu 2 is  " + price2);
+        System.out.println("Your Order Price of menu 3 is  " + price3);
+        order.setOrderStatus(OrderStatus.PENDING);
+        order.setOrderTotalamount(totalAmount);
+        dao().placeOrder(order);
+        dao().updateBalance(diff, order.getWalletType(), order.getCustomerId());
       }
     }
     return "Order Placed Successfully For the Registered Address...\nSoon you will be notified by our Vendor...";
